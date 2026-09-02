@@ -1,0 +1,1 @@
+print("SmartCare Clinic Appointment Booking System")
