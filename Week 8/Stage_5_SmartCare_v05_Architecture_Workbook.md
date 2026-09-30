@@ -71,21 +71,4 @@ The Domain layer stays independent from the UI and concrete storage method.
 | Move AppointmentRepository into Domain | Mild suggestion only | Rejected | The Week 8 architecture uses Repository as its own layer | Repository remains in `repositories/` |
 | Move more object creation away from Presentation | Minor coupling | Modified | Appointment creation stays in the service, but Patient and Practitioner creation stays in Presentation for simplicity | Program still follows the required dependency direction |
 | Add a composition module | No important current problem | Rejected / Deferred | It would add extra structure to a small system without a clear current benefit | Current program runs correctly without it |
-| Watch for AppointmentService becoming too large | Future risk only | Accepted as a design check | Services should coordinate use cases without becoming a new monolith | Current service only handles booking and cancellation |
-
-## Verification
-
-The refactored SmartCare system was run after the architecture review.
-
-The output was:
-
-```text
-Initial status: Scheduled
-After cancellation: Cancelled
-Repeated cancellation: Appointment cannot be cancelled again
-Stored appointments: 1
-```
-
-The main behaviour remained the same after refactoring.
-
-The architecture now has clearer responsibilities and dependency direction without adding unnecessary complexity.
+| Watch for AppointmentService becoming too large | Future risk only | Accepted as a design check | Services should coordinate use cases without becoming a new monolith | Current service only handles booking, cancellation and listing appointments |

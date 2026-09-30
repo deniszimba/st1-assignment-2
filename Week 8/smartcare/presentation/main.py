@@ -34,7 +34,7 @@ def main():
     except ValueError as error:
         print("Repeated cancellation:", error)
 
-    print("Stored appointments:", len(repository.list_all()))
+    print("Stored appointments:", len(service.list_appointments()))
 
 
 if __name__ == "__main__":

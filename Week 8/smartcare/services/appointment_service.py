@@ -19,3 +19,6 @@ class AppointmentService:
     def cancel_appointment(self, appointment: Appointment) -> None:
         appointment.cancel()
         self.repository.save(appointment)
+
+    def list_appointments(self) -> list[Appointment]:
+        return self.repository.list_all()
